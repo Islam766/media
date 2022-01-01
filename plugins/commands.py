@@ -67,7 +67,7 @@ async def start(bot, cmd):
                 buttons = [
                     [
                         InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
-                        InlineKeyboardButton('Share This Bot', url='http://t.me/share/url?url=Checkout%20%40Serie_zbot%20for%20searching%20files')
+                        InlineKeyboardButton('Share This Bot', url='https://t.me/isIam07')
                     ],
                     [
                         InlineKeyboardButton('Request Group', url='https://t.me/TeamBORZ95')
@@ -103,7 +103,7 @@ async def start(bot, cmd):
                 [
                     [
                         InlineKeyboardButton("Search Here", switch_inline_query_current_chat=''),
-                        InlineKeyboardButton("Share Bot", url="http://t.me/share/url?url=Checkout%20%40Serie_zbot%20for%20searching%20files")
+                        InlineKeyboardButton("Share Bot", url="https://t.me/isIam07")
                     ],
                     [
                         InlineKeyboardButton("About", callback_data="about")
