@@ -31,10 +31,10 @@ async def start(bot, cmd):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
+                                InlineKeyboardButton("🤖 Присоединяйтесь к каналу обновлений", url=invite_link.invite_link)
                             ],
                             [
-                                InlineKeyboardButton(" 🔄 Try Again", callback_data=f"checksub#{file_id}")
+                                InlineKeyboardButton(" 🔄 Попробуй снова", callback_data=f"checksub#{file_id}")
                             ]
                         ]
                     ),
@@ -70,7 +70,7 @@ async def start(bot, cmd):
                         InlineKeyboardButton('Share This Bot', url='http://t.me/share/url?url=Checkout%20%40Serie_zbot%20for%20searching%20files')
                     ],
                     [
-                        InlineKeyboardButton('Request Group', url='https://t.me/requestyourseries_movies')
+                        InlineKeyboardButton('Request Group', url='https://t.me/TeamBORZ95')
                     ]
                     ]
                 await bot.send_cached_media(
@@ -146,10 +146,10 @@ async def channel_info(bot, message):
 @Client.on_message(filters.command('total') & filters.user(ADMINS))
 async def total(bot, message):
     """Show total files in database"""
-    msg = await message.reply("Processing...⏳", quote=True)
+    msg = await message.reply("Обработка...⏳", quote=True)
     try:
         total = await Media.count_documents()
-        await msg.edit(f'📁 Saved files: {total}')
+        await msg.edit(f'📁 Сохраненные файлы: {total}')
     except Exception as e:
         logger.exception('Failed to check total files')
         await msg.edit(f'Error: {e}')
@@ -169,9 +169,9 @@ async def delete(bot, message):
     """Delete file from database"""
     reply = message.reply_to_message
     if reply and reply.media:
-        msg = await message.reply("Processing...⏳", quote=True)
+        msg = await message.reply("Обработка...⏳", quote=True)
     else:
-        await message.reply('Reply to file with /delete which you want to delete', quote=True)
+        await message.reply('Ответить на файл с помощью /delete который вы хотите удалить', quote=True)
         return
 
     for file_type in ("document", "video", "audio"):
@@ -179,7 +179,7 @@ async def delete(bot, message):
         if media is not None:
             break
     else:
-        await msg.edit('This is not supported file format')
+        await msg.edit('Это неподдерживаемый формат файла')
         return
 
     result = await Media.collection.delete_one({
@@ -188,16 +188,16 @@ async def delete(bot, message):
         'mime_type': media.mime_type
     })
     if result.deleted_count:
-        await msg.edit('File is successfully deleted from database')
+        await msg.edit('Файл успешно удален из базы данных')
     else:
         await msg.edit('File not found in database')
 @Client.on_message(filters.command('about'))
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('Update Channel', url='https://t.me/serie_z')
+            InlineKeyboardButton('Update Channel', url='https://t.me/isIam07')
         ]
         ]
-    await message.reply(text="<b>Developer : <a href='https://t.me/darknessoft'>Ǥѳđƽϯѳƞҟƽ</a>\nAdmins : <a href='https://t.me/Dhanush_n'>Dhanush N</a>,<a href='https://t.me/UzumakiLikith'>Likith</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await message.reply(text="<b>Developer : <a href='https://t.me/isIam07'>Ǥѳđƽϯѳƞҟƽ</a>\nAdmins : <a href='https://t.me/isIam07'>Dhanush N</a>,<a href='https://t.me/isIam07'>Likith</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
     
