@@ -61,11 +61,11 @@ async def filter(client, message):
                     )
         else:
             await client.send_message(chat_id=message.from_user.id,
-                                      text="Sorry, The file name you requested doesnt seem available, Try checking the spelling or Request the series or movies in [our group](https://t.me/requestyourseries_movies).",
+                                      text="Sorry, The file name you requested doesnt seem available, Try checking the spelling or Request the series or movies in [our group](https://t.me/isIam07).",
                                      reply_markup=InlineKeyboardMarkup(
                                             [
                                                 [
-                                                    InlineKeyboardButton("Request Group", url='https://t.me/requestyourseries_movies')
+                                                    InlineKeyboardButton("Request Group", url='https://t.me/isIam07')
                                                 ]
                                             ]
                                       ))
@@ -306,11 +306,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Share This Bot', url='http://t.me/share/url?url=Checkout%20%40Serie_zbot%20for%20searching%20files'),
-                        InlineKeyboardButton('Update Channel', url='https://t.me/serie_z')                        
+                        InlineKeyboardButton('Share This Bot', url='https://t.me/isIam07'),
+                        InlineKeyboardButton('Update Channel', url='https://t.me/isIam07')                        
                     ],
                     [
-                        InlineKeyboardButton('Request Group', url='https://t.me/requestyourseries_movies')
+                        InlineKeyboardButton('Request Group', url='https://t.me/isIam07')
                     ]
                     ]
                 
@@ -341,11 +341,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{title}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Share Bots', url='http://t.me/share/url?url=Checkout%20%40Serie_zbot%20for%20searching%20files'),
-                        InlineKeyboardButton('Update Channel', url='https://t.me/serie_z')                        
+                        InlineKeyboardButton('Share Bots', url='https://t.me/isIam07'),
+                        InlineKeyboardButton('Update Channel', url='https://t.me/isIam07')                        
                     ],
                     [
-                        InlineKeyboardButton('Request Group', url='https://t.me/requestyourseries_movies')
+                        InlineKeyboardButton('Request Group', url='https://t.me/isIam07')
                     ]
                     ]
                 
