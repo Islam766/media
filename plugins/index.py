@@ -14,10 +14,10 @@ lock = asyncio.Lock()
 async def index_files(bot, message):
     """Save channel or group files"""
     if lock.locked():
-        await message.reply('Wait until previous process complete.')
+        await message.reply('Подождите, пока не завершится предыдущий процесс.')
     else:
         while True:
-            last_msg = await bot.ask(text = "Forward me last message of a channel which I should save to my database.\n\nYou can forward posts from any public channel, but for private channels bot should be an admin in the channel.\n\nMake sure to forward with quotes (Not as a copy)", chat_id = message.from_user.id)
+            last_msg = await bot.ask(text = "Перешлите мне последнее сообщение канала, которое я должен сохранить в своей базе данных.\n\nВы можете пересылать сообщения с любого публичного канала, но для приватных каналов бот должен быть администратором канала.\n\nОбязательно пересылайте цитаты (не как копию)", chat_id = message.from_user.id)
             try:
                 last_msg_id = last_msg.forward_from_message_id
                 if last_msg.forward_from_chat.username:
